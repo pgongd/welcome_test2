@@ -211,9 +211,9 @@
                     <p class="split-text">만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="text-box second">
-                    <p class="split-text">2<strong class="name">대상자명</strong>님</p>
-                    <p class="split-text">2<span class="emp">[보유고객수]</span>번째 고객님으로</p>
-                    <p class="split-text">2만나게 되어 반갑습니다.</p>
+                    <p class="split-text">1<strong class="name">대상자명</strong>님</p>
+                    <p class="split-text">1<span class="emp">[보유고객수]</span>번째 고객님으로</p>
+                    <p class="split-text">1만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="ico">
                     <div class="inner">
@@ -233,9 +233,9 @@
                     <p class="split-text">만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="text-box second">
-                    <p class="split-text">3<strong class="name">대상자명</strong>님</p>
-                    <p class="split-text">3<span class="emp">[보유고객수]</span>번째 고객님으로</p>
-                    <p class="split-text">3만나게 되어 반갑습니다.</p>
+                    <p class="split-text">2<strong class="name">대상자명</strong>님</p>
+                    <p class="split-text">2<span class="emp">[보유고객수]</span>번째 고객님으로</p>
+                    <p class="split-text">2만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="ico">
                     <div class="inner">
@@ -255,9 +255,9 @@
                     <p class="split-text">만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="text-box second">
-                    <p class="split-text">4<strong class="name">대상자명</strong>님</p>
-                    <p class="split-text">4<span class="emp">[보유고객수]</span>번째 고객님으로</p>
-                    <p class="split-text">4만나게 되어 반갑습니다.</p>
+                    <p class="split-text">3<strong class="name">대상자명</strong>님</p>
+                    <p class="split-text">3<span class="emp">[보유고객수]</span>번째 고객님으로</p>
+                    <p class="split-text">3만나게 되어 반갑습니다.</p>
                 </div>
                 <div class="ico">
                     <div class="inner">
@@ -287,7 +287,7 @@
         loop: false,
         // navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
         pagination: { el: ".swiper-pagination", clickable: true },
-        allowTouchMove:false,
+        // allowTouchMove:false,
         // allowTouchMove: true, // 사용자가 직접 스와이프 가능
         autoplay: {
             delay: 5000,
@@ -300,9 +300,18 @@
                 setTimeout(startAnimations, 1000);
             },
             reachEnd: function () {
-                setTimeout(showBottomSheet, 5000);
-                stopAutoplay();
+                if (this.isEnd) {
+                    setTimeout(showBottomSheet, 5000);
+                    stopAutoplay();
+                } 
             },
+            // transitionEnd:function(){
+            //     if (this.activeIndex === this.slides.length - 1) {
+            //         showBottomSheet();
+            //     } else {
+            //         hideBottomSheet();
+            //     }
+            // }
         }
     });
 
